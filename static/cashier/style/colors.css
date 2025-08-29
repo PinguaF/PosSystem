@@ -1,0 +1,138 @@
+html{
+    background-color: #CBD0D8;
+    font-family: Arial, Helvetica, sans-serif;
+}
+button{
+    margin: 0.3vh;
+    border: 0;
+    background-color: #283035;
+    color: #FFFFFF;
+    border-radius: 1vh;
+    font-weight: 600;
+    font-size: 1.7vh;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+    padding: 0;
+}
+button:hover{
+    cursor: pointer;
+}
+
+.burger{
+    background-color: #d84452;
+}
+.snacks{
+    background-color: #f5ba46;
+}
+.drinks{
+    background-color: #3aacd9;
+}
+.deserts{
+    background-color: #9479da;
+}
+.other{
+    background-color: #35ba9b;
+}
+.active-product{
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+}
+
+.top-screen-label{
+    background: radial-gradient(circle,rgba(40, 48, 53, 1) 50%, #CBD0D8 90%);
+    color: #FFFFFF;
+    height: 6vh;
+}
+
+.active{
+    color: #f5ba46;
+}
+
+.manager-auth{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.alert-message{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.manager-popup{
+    background-color: #FFFFFF;
+}
+.alert-popup{
+    background-color: #FFFFFF;
+}
+
+.mng-kb-exit{
+    background-color: #d84452;
+}
+.mng-kb-confirm{
+    background-color: #35ba9b;
+}
+
+.disactive{
+    opacity: 0.5;
+    background-color: #283035;
+}
+
+.change-count{
+    background-color: #f5f6f8;
+    color: #283035;
+    font-weight: 900;
+    font-size: 4vh;
+}
+.delete-item{
+    background-color: #e7553e;
+}
+.promo-item{
+    background-color: #e7553e;
+}
+.clear-chooise{
+    background-color: #e7553e;
+}
+.take-out{
+    background-color: #f5f6f8;
+    color: #283035;
+}
+.take-in{
+    background-color: #f5f6f8;
+    color: #283035;
+}
+.change-size{
+    background-color: #f5ba46;
+    color: #283035;
+    font-weight: 800;
+    font-size: 2vh;
+}
+.menu-page{
+    background-color: #4d86da;
+} 
+
+.block-message{
+    background-color: #d84452;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 3vh;
+}
+
+.tender-kb-buton{
+    background-color: #FFFFFF;
+    color: #000000;
+    font-size: 3vh;
+    border-color: #283035;
+}
+.cash-amount, .total-price{
+    text-align: right;
+    font-size: 3vh;
+}
+.pay-card{
+    background-color: #3aacd9;
+}
+.save-order{
+    background-color: #f5ba46;
+}
+.no-change{
+    background-color: #35ba9b;
+}
+.pay-cash{
+    background-color: #35ba9b;
+}

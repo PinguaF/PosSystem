@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KVS</title>
+    <link rel="stylesheet" href="/static/kvs/style/colors.css">
+    <link rel="stylesheet" href="/static/kvs/style/position.css">
+    <script src="/static/jquery/jquery.js"></script>
+    <script src="/static/jquery/socketio.js"></script>
+</head>
+<body>
+    <section class="orders-grid">
+        {% for i in range(8) %}
+        <div class="order">
+            {% for j in range(12) %}
+            <p>POSITION {{j}}</p>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </section>
+</body>
+</html>
+<script src="/static/kvs/scripts/main.js"></script>

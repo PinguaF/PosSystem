@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/wayweb/styles.css">
+    <title>WayWeb</title>
+    <script src="/static/jquery/jquery.js"></script>
+    <script src="/static/jquery/socketio.js"></script>
+</head>
+<body>
+    <button class="update-proucts-all-pos"> Обновить доступность продуктов POS</button>
+    <section class="POStable">
+        <label class="table-label">POS SYSTEM WAYWEB</label>
+        <p>Open POS</p>
+        <p>Open POS Monitor</p>
+        <button class="block-all-pos">Block all</button>
+        <button class="unblock-all-pos">Unblock all</button>
+        <button class="reload-all-pos">Reload all</button>
+        <p>Pos Status</p>
+        <label class="table-label">DT POS</label>
+
+        <button class="js-link-button" topage="/cashier/1">Pos 1</button>
+        <button class="js-link-button" topage="/cashier/monitor/1">Pos 1 Monitor</button>
+        <button class="block-pos" pos="1">Block</button>
+        <button class="unblock-pos" pos="1">Unblock</button>
+        <button class="reload-pos" pos="1">Reload</button>
+        <label class="state-pos" pos="1">{{ pos_state[0][0] }}</label>
+
+        <label class="table-label">FC POS</label>
+
+        <button class="js-link-button" topage="/cashier/5">Pos 5</button>
+        <button class="js-link-button" topage="/cashier/monitor/5">Pos 5 Monitor</button>
+        <button class="block-pos" pos="5">Block</button>
+        <button class="unblock-pos" pos="5">Unblock</button>
+        <button class="reload-pos" pos="5">Reload</button>
+        <label class="state-pos" pos="5">{{ pos_state[1][0] }}</label>
+
+        <button class="js-link-button" topage="/cashier/6">Pos 6</button>
+        <button class="js-link-button" topage="/cashier/monitor/6">Pos 6 Monitor</button>
+        <button class="block-pos" pos="6">Block</button>
+        <button class="unblock-pos" pos="6">Unblock</button>
+        <button class="reload-pos" pos="6">Reload</button>
+        <label class="state-pos" pos="6">{{ pos_state[2][0] }}</label>
+
+        <label class="table-label">DLV POS</label>
+
+        <button class="js-link-button" topage="/cashier/14">Pos 14</button>
+        <button class="js-link-button" topage="/cashier/monitor/14">Pos 14 Monitor</button>
+        <button class="block-pos" pos="14">Block</button>
+        <button class="unblock-pos" pos="14">Unblock</button>
+        <button class="reload-pos" pos="14">Reload</button>
+        <label class="state-pos" pos="14">{{ pos_state[3][0] }}</label>
+
+        <label class="table-label">CAFE POS</label>
+
+        <button class="js-link-button" topage="/cashier/19">Pos 19</button>
+        <button class="js-link-button" topage="/cashier/monitor/19">Pos 19 Monitor</button>
+        <button class="block-pos" pos="19">Block</button>
+        <button class="unblock-pos" pos="19">Unblock</button>
+        <button class="reload-pos" pos="19">Reload</button>
+        <label class="state-pos" pos="19">{{ pos_state[4][0] }}</label>
+    </section>
+</body>
+</html>
+<script src="/static/wayweb/wayweb.js"></script>

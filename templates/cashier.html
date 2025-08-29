@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POS {{ pos_id }}</title>
+    <link rel="stylesheet" href="/static/cashier/style/colors.css">
+    <link rel="stylesheet" href="/static/cashier/style/position.css">
+    <script src="/static/jquery/jquery.js"></script>
+    <script src="/static/jquery/socketio.js"></script>
+</head>
+<body>
+
+    <section class="manager-auth">
+        <div class="manager-popup">
+            <h1 class="mng-top-label">PosSystem Inc.</h1>
+            <input class="manager-password" type="password" disabled>
+            <button class="mng-kb-button">1</button>
+            <button class="mng-kb-button">2</button>
+            <button class="mng-kb-button">3</button>
+            <button class="mng-kb-button">4</button>
+            <button class="mng-kb-button">5</button>
+            <button class="mng-kb-button">6</button>
+            <button class="mng-kb-button">7</button>
+            <button class="mng-kb-button">8</button>
+            <button class="mng-kb-button">9</button>
+            <button class="mng-kb-exit">BACK</button>
+            <button class="mng-kb-button">0</button>
+            <button class="mng-kb-confirm">OK</button>
+            <h1 class="mng-label">Авторизируйте менеджера для продолжения</h1>
+        </div>
+    </section>
+
+    <section class="alert-message">
+        <div class="alert-popup">
+            <h1 class="alert-label">Внимание!</h1>
+            <p class="alert-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde magnam repellendus, earum maxime, quidem adipisci expedita asperiores cupiditate fugiat perferendis porro necessitatibus sed dicta quae! Sapiente sunt hic similique cum?</p>
+            <div class="alert-flex-container">
+                <button class="confirm-alert">Понятно</button>
+            </div>
+        </div>
+    </section>
+    
+    <section class="tender-screen">
+
+        <section class="top-info">
+            <input disabled class="tp1" placeholder="1">
+            <input disabled class="tp2 ti-current-pos-number">
+            <input disabled class="tp3 ti-current-pos-channel">
+            <input disabled class="tp4 ti-current-state" placeholder="4">
+            <input disabled class="tp5 ti-current-order-id">
+            <input disabled class="tp6" placeholder="order time">
+            <input disabled class="tp7" placeholder="count info">
+            <input disabled class="tp8 ti-current-cashier">
+            <input disabled class="tp9 ti-curent-time">
+        </section>
+
+        <section class="mng-small-grid">
+            <label class="top-screen-label">Tender menu</label>
+
+            <button class="save-order">Сохранить</button>
+            <button class="back-from-tender">Назад</button>
+
+            <button class="pay-card">Карта</button>
+            <button class="no-change">Без сдачи</button>
+            <button class="pay-cash">Оплатить</button>
+
+            <input class="total-price" disabled value="00">
+            <input class="cash-amount" disabled value="00">
+            <button class="tender-kb-buton tkb1">1</button>
+            <button class="tender-kb-buton tkb2">2</button>
+            <button class="tender-kb-buton tkb3">3</button>
+            <button class="tender-kb-buton tkb4">4</button>
+            <button class="tender-kb-buton tkb5">5</button>
+            <button class="tender-kb-buton tkb6">6</button>
+            <button class="tender-kb-buton tkb7">7</button>
+            <button class="tender-kb-buton tkb8">8</button>
+            <button class="tender-kb-buton tkb9">9</button>
+            <button class="tender-kb-buton tkb0">0</button>
+
+        </section>
+    </section>
+
+    <section class="main-page">
+
+        <section class="top-info">
+            <input disabled class="tp1" placeholder="1">
+            <input disabled class="tp2 ti-current-pos-number">
+            <input disabled class="tp3 ti-current-pos-channel">
+            <input disabled class="tp4 ti-current-state" placeholder="4">
+            <input disabled class="tp5 ti-current-order-id">
+            <input disabled class="tp6" placeholder="order time">
+            <input disabled class="tp7" placeholder="count info">
+            <input disabled class="tp8 ti-current-cashier">
+            <input disabled class="tp9 ti-curent-time">
+        </section>
+
+        <button class="crew-food">Еда работников</button>
+        <button class="manager-food">Еда Менеджеров</button>
+        <button class="order-list">Список заказов</button>
+        <button class="manager-menu">Меню менеджера</button>
+        <button class="crew-menu">Меню работника</button>
+
+        <button class="change-count cc0">0</button>
+        <button class="change-count cc1">1</button>
+        <button class="change-count cc2">2</button>
+        <button class="change-count cc3">3</button>
+        <button class="change-count cc4">4</button>
+        <button class="change-count cc5">5</button>
+        <button class="change-count cc6">6</button>
+        <button class="change-count cc7">7</button>
+        <button class="change-count cc8">8</button>
+        <button class="change-count cc9">9</button>
+
+        <button class="delete-item">Удалить продукт</button>
+        <button class="promo-item">Промо продукт</button>
+        <button class="clear-chooise">Очистить выбор</button>
+        <button class="take-out">Итого НВ</button>
+        <button class="take-in">Итого ВЗ</button>
+
+        <button class="s-size change-size">Мал (0.25)</button>
+        <button class="m-size change-size"> Ср (0.4)</button>
+        <button class="l-size change-size">Бол (0.5)</button>
+
+        <button class="menu-page mp1" topage="1">Основное меню</button>
+        <button class="menu-page mp2" topage="3">Сред комбо</button>
+        <button class="menu-page mp3" topage="4">Бол комбо</button>
+        <button class="menu-page mp4" topage="5">Хэппи Мил</button>
+        <button class="menu-page mp5" topage="6">Десерты</button>
+        <button class="menu-page mp6" topage="7">Соусы</button>
+        <button class="menu-page mp7" topage="2">Напитки</button>
+        <button class="menu-page mp8" topage="8">Акции</button>
+        <button class="menu-page mp9" topage="9">Снэки</button>
+        <button class="menu-page mp10" topage="10">10</button>
+
+        <div class="page page1">
+            <button class="product " id="1001">Гамбургер</button>
+            <button class="product " id="1002">Чизбургер</button>
+            <button class="product " id="1003">ДВ Чизбургер</button>
+            <button class="product " id="1004">ТРОЙ Чизбургер</button>
+            <button class="product " id="1010">Роял Чизбургер</button>
+            <button class="product " id="1011">ДВ Роял Чизбургер</button>
+            <span></span><span></span>
+            <button class="product " id="1005">Биг Мак</button>
+            <button class="product " id="1021">Биг Тейсти</button>
+            <button class="product " id="1022">ДВ Биг Тейсти</button>
+            <button class="product " id="1036">Биг Тейсти Кур</button>
+            <button class="product " id="1037">ДВ Биг Тейсти Кур</button>
+            <button class="product " id="1111">Наггетсы 7</button>
+            <span></span><span></span>
+            <button class="product " id="1041">Филе о Фиш</button>
+            <button class="product " id="1042">ДВ Филе о Фиш</button>
+            <button class="product " id="1031">Чикенбургер</button>
+            <button class="product " id="1033">Мак Чикен</button>
+            <button class="product " id="1113">Наггетсы 20</button>
+            <button class="product " id="1112">Наггетсы 10</button>
+            <span></span><span></span>
+            <button class="product" id="1001">Карт фри</button>
+            <button class="product" id="1001">Карт дер</button>
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+            <button class="product" id="1001">Кола</button>
+            <button class="product" id="1001">Фанта</button>
+            <button class="product" id="1001">Спрайт</button>
+            <button class="product" id="1001">Кола зеро</button>
+            <span></span>
+            <span></span>
+            <button class="product" id="6002">Влажная салфетка</button>
+            <button class="product" id="6001">Бумажный пакет</button>
+        </div>
+        <div class="page page2">
+            <button class="product" id="3001">Кола мал</button>
+            <button class="product" id="3002">Кола сред</button>
+            <button class="product" id="3003">Кола бол</button>
+            <span></span>
+            <button class="product" id="3016">Кола зеро мал</button>
+            <button class="product" id="3017">Кола зеро сред</button>
+            <button class="product" id="3018">Кола зеро бол</button>
+            <span></span>
+            <button class="product" id="3006">Фанта мал</button>
+            <button class="product" id="3007">Фанта сред</button>
+            <button class="product" id="3008">Фанта бол</button>
+            <span></span>
+            <button class="product" id="3011">Спрайт мал</button>
+            <button class="product" id="3012">Спрайт сред</button>
+            <button class="product" id="3013">Спрайт бол</button>
+            <span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <button class="product" id="">Американо</button>
+            <button class="product" id="">Американо</button>
+            <button class="product" id="">Американо</button>
+            <span></span>
+            <button class="product" id="">Капучино</button>
+            <button class="product" id="">Капучино</button>
+            <button class="product" id="">Капучино</button>
+            <span></span>
+            <span></span>
+            <button class="product" id="">Латте</button>
+            <button class="product" id="">Латте</button>
+            <span></span>
+            <button class="product" id="">Флэт Уайт</button>
+            <button class="product" id="">Бонаква газ</button>
+            <button class="product" id="">Бонаква негаз</button>
+        </div>
+        <div class="page page3">
+            <button class="product" id="1001">Гамбургер</button>
+            <button class="product" id="1001">Чизбургер</button>
+            <button class="product" id="1001">ДВ Чизбургер</button>
+            <button class="product" id="1001">ТРОЙ Чизбургер</button>
+            <button class="product" id="1001">Роял Чизбургер</button>
+            <button class="product" id="1001">ДВ Роял Чизбургер</button>
+            <span></span><span></span>
+            <button class="product" id="1001">Биг Мак</button>
+            <button class="product" id="1001">Биг Тейсти</button>
+            <button class="product" id="1001">ДВ Биг Тейсти</button>
+            <button class="product" id="1001">Биг Тейсти Кур</button>
+            <button class="product" id="1001">ДВ Биг Тейсти Кур</button>
+            <button class="product" id="1001">Наггетсы 7</button>
+            <span></span><span></span>
+            <button class="product" id="1001">Филе о Фиш</button>
+            <button class="product" id="1001">ДВ Филе о Фиш</button>
+            <button class="product" id="1001">Чикенбургер</button>
+            <button class="product" id="1001">Мак Чикен</button>
+            <button class="product" id="1001">Наггетсы 20</button>
+            <button class="product" id="1001">Наггетсы 10</button>
+        </div>
+        <div class="page page4">
+            <button class="product" id="1001">Гамбургер</button>
+            <button class="product" id="1001">Чизбургер</button>
+            <button class="product" id="1001">ДВ Чизбургер</button>
+            <button class="product" id="1001">ТРОЙ Чизбургер</button>
+            <button class="product" id="1001">Роял Чизбургер</button>
+            <button class="product" id="1001">ДВ Роял Чизбургер</button>
+            <span></span><span></span>
+            <button class="product" id="1001">Биг Мак</button>
+            <button class="product" id="1001">Биг Тейсти</button>
+            <button class="product" id="1001">ДВ Биг Тейсти</button>
+            <button class="product" id="1001">Биг Тейсти Кур</button>
+            <button class="product" id="1001">ДВ Биг Тейсти Кур</button>
+            <button class="product" id="1001">Наггетсы 7</button>
+            <span></span><span></span>
+            <button class="product" id="1001">Филе о Фиш</button>
+            <button class="product" id="1001">ДВ Филе о Фиш</button>
+            <button class="product" id="1001">Чикенбургер</button>
+            <button class="product" id="1001">Мак Чикен</button>
+            <button class="product" id="1001">Наггетсы 20</button>
+            <button class="product" id="1001">Наггетсы 10</button>
+        </div>
+        <div class="page page5">
+            <button class="product" id="1001">ХП гамбургер</button>
+            <button class="product" id="1001">ХП чизбургер</button>
+            <button class="product" id="1001">ХП Чикенбургер</button>
+            <button class="product" id="1001">ХП 5наггетс</button>
+            <Span></Span><Span></Span><Span></Span><Span></Span>
+            <button class="product" id="1001">Картошка</button>
+            <span></span>
+            <span></span>
+            <span></span>
+            <Span></Span><Span></Span><Span></Span><Span></Span>
+            <button class="product" id="1001">ХП Кола</button>
+            <button class="product" id="1001">ХП Фанта</button>
+            <button class="product" id="1001">ХП Спрайт</button>
+            <button class="product" id="1001">ХП Сок</button>
+            <Span></Span><Span></Span><Span></Span><Span></Span>
+            <button class="product" id="1001">Игрушка мал</button>
+            <button class="product" id="1001">Игрушка дев</button>
+            <button class="product" id="1001">Книжка</button>
+        </div>
+        <div class="page page6">
+            <button class="product" id="1001">Мор шоколад</button>
+            <button class="product" id="1001">Мор карамель</button>
+            <button class="product" id="1001">Мор клбника</button>
+            <button class="product" id="1001">Мор сезон</button>
+            <span></span>
+            <span></span>
+            <button class="product" id="1001">Пирог вишня</button>
+            <button class="product" id="1001">Пирог яблоко</button>
+
+            <button class="product" id="1001">МакФлури шоколад</button>
+            <button class="product" id="1001">МакФлури карамель</button>
+            <button class="product" id="1001">МакФлури клбника</button>
+            <button class="product" id="1001">МакФлури сезон</button>
+            <span></span><span></span><span></span><span></span>
+
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+
+            <button class="product" id="1001">Кокт шоколад мал</button>
+            <button class="product" id="1001">Кокт карамель мал</button>
+            <button class="product" id="1001">Кокт клбника мал</button>
+            <button class="product" id="1001">Кокт сезон мал</button>
+            <span></span><span></span><span></span><span></span>
+            
+            <button class="product" id="1001">Кокт шоколад бол</button>
+            <button class="product" id="1001">Кокт карамель бол</button>
+            <button class="product" id="1001">Кокт клбника бол</button>
+            <button class="product" id="1001">Кокт сезон бол</button>
+        </div>
+        <div class="page page7">
+            <button class="product" id="5001">Барбекю</button>
+            <button class="product" id="5002">Горчичный</button>
+            <button class="product" id="5003">Сырный</button>
+            <button class="product" id="5004">Кисло-сладкий</button>
+            <button class="product" id="5005">Кетчуп</button>
+        </div>
+        <div class="page page8">
+            <button class="product" id="1001">8</button>
+        </div>
+        <div class="page page9">
+            <button class="product" id="2001">Карт фри мал</button>
+            <button class="product" id="2002">Карт фри сред</button>
+            <button class="product" id="2003">Карт фри бол</button>
+            <button class="product" id="2006">Карт фри с сыр соус и луком</button>
+            <button class="product" id="2007">Карт фри с гриб соус и луком</button>
+            <span></span><span></span><span></span>
+            <button class="product" id="2011">Карт дер сред</button>
+            <button class="product" id="2012">Карт дер бол</button>
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+            <button class="product" id="1101">Крылья 3 шт</button>
+            <button class="product" id="1102">Крылья 5 шт</button>
+            <button class="product" id="1103">Крылья 7 шт</button>
+            <span></span><span></span><span></span><span></span><span></span>
+            <button class="product" id="1104">Стрипсы 3 шт</button>
+            <button class="product" id="1105">Стрипсы 5 шт</button>
+            <button class="product" id="1106">Стрипсы 7 шт</button>
+            
+        </div>
+        <div class="page page10">
+            <button class="product" id="1001">10</button>
+        </div>
+
+    </section>
+
+    <section class="side-cart">
+        <input disabled class="cart-type">
+        <input disabled class="cart-time">
+        <input disabled class="cart-info">
+        <div class="cart-wrap">
+            <div class="cart">
+                <div class="cart-item">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="manager-screen">
+
+        <section class="top-info">
+            <input disabled class="tp1" placeholder="1">
+            <input disabled class="tp2 ti-current-pos-number">
+            <input disabled class="tp3 ti-current-poc-channel">
+            <input disabled class="tp4 ti-current-state" placeholder="4">
+            <input disabled class="tp5">
+            <input disabled class="tp6" placeholder="order time">
+            <input disabled class="tp7" placeholder="count info">
+            <input disabled class="tp8 ti-current-cashier">
+            <input disabled class="tp9 ti-curent-time">
+        </section>
+        <label class="top-screen-label">Manager menu</label>
+
+        <section class="mng-small-grid">
+
+            <button class="reload-this-pos">Reload this POS</button>
+            <button class="reload-all-pos">Reload all POS(-)</button>
+ 
+            <button class="reload-all-kvs">Reload all kvs(-)</button>
+
+            <button class="pos-system-info">Pos Info</button>
+
+            <button class="activate-product">Activate Product</button>
+            <button class="disactivate-product">Disactivate Product</button>
+
+            <button class="login-cashier">LogIn Cashier</button>
+            <button class="logout-cashier">LogOut Cashier</button>
+
+            <button class="mng-return">Return</button>
+            <button class="mng-clear-cart">Clear Cart</button>
+            
+            <input disabled class="mng-kb-input">
+            <button class="mng-kb-button mkb1">1</button>
+            <button class="mng-kb-button mkb2">2</button>
+            <button class="mng-kb-button mkb3">3</button>
+            <button class="mng-kb-button mkb4">4</button>
+            <button class="mng-kb-button mkb5">5</button>
+            <button class="mng-kb-button mkb6">6</button>
+            <button class="mng-kb-button mkb7">7</button>
+            <button class="mng-kb-button mkb8">8</button>
+            <button class="mng-kb-button mkb9">9</button>
+            <button class="mng-kb-button mkb0">0</button>
+            <button class="mng-kb-enter">Enter</button>
+            <button class="mng-kb-clear">Clear</button>
+        </section>
+    </section>
+
+    <section class="jango-info">
+        <p class="pos_id">{{ pos_id }}</p>
+        <p class="pos_channel">{{ pos_channel }}</p>
+        <p class="pos_state">{{ pos_state }}</p>
+        <p class="pos_cashier">{{ pos_cashier }}</p>
+        <p class="js-temp-cart"></p>
+    </section>
+
+    <section class="block-message">
+        <h1>THIS POS IS BLOCK NOW ;(</h1>
+        <p>Этот кассовый терминал заблокирован. Позовите менеджера для его разблокировки. Его использование ограничено.</p>
+    </section>
+</body>
+</html>
+<script src="/static/cashier/scripts/main.js"></script>
+<script src="/static/cashier/scripts/pages.js"></script>
+<script src="/static/cashier/scripts/products.js"></script>
+<script src="/static/cashier/scripts/alert.js"></script>
+<script src="/static/cashier/scripts/top-info.js"></script>
+<script src="/static/cashier/scripts/manager/manager-auth.js"></script>
+<script src="/static/cashier/scripts/manager/manager-developer.js"></script>
+<script src="/static/cashier/scripts/block-pos.js"></script>
+<script src="/static/cashier/scripts/cart/item-cart.js"></script>
+<script src="/static/cashier/scripts/cart/render-cart.js"></script>
+<script src="/static/cashier/scripts/cart/pay-order.js"></script>

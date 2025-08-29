@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/monitor/style.css">
+    <title>POS MONITOR {{ pos_id }}</title>
+    <script src="/static/jquery/jquery.js"></script>
+    <script src="/static/jquery/socketio.js"></script>
+</head>
+<body>
+
+    <section class="screen order">
+        
+        <div class="product-list">
+            
+        </div>
+        
+        <div class="total-price">
+            <p>Итого:</p>
+            <p class="js-total">9999.99</p>
+        
+        </div>
+    </section>
+
+    <section class="screen welcome">
+        <h1>Добро пожаловать!</h1>
+    </section>
+
+    <section class="screen close">
+        <h1>Эта касса закрыта:(</h1>
+    </section>
+
+    <section class="jango-info">
+        <p class="pos_id">{{ pos_id }}</p>
+        <!--<p class="pos_channel">{{ pos_channel }}</p>-->
+        <p class="pos_state">{{ pos_state }}</p>
+        <p class="pos_cashier">{{ pos_cashier }}</p>
+    </section>
+</body>
+</html>
+<script src="/static/monitor/monitor.js"></script>
+<script src="/static/monitor/order.js"></script>
